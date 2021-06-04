@@ -1,0 +1,19 @@
+server:
+  port: ${USER_SERVICE_PORT:9015}
+spring:
+  data:
+    mongodb:
+      database: ${USER_DB:e_commerce_db}
+      port: ${USER_PORT:27017}
+      host: ${USER_HOST:localhost}
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+  instance:
+    preferIpAddress: true    
+  

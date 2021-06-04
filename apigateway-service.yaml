@@ -1,0 +1,29 @@
+message: "API Gateway Service"
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+server:
+  port: ${GATEWAY_PORT:8090}
+zuul:
+  routes:
+    book-service:
+      path: /book-service/**
+      serviceId: BookService
+    user-authentication-service:
+      path: /user-authentication-service/**
+      serviceId: UserAuthenticationService
+                 
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+  instance:
+    preferIpAddress: true    
+
+

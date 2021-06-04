@@ -1,0 +1,23 @@
+server:
+  port: ${INVENTORY_PORT:9019}
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB  
+  data:
+    mongodb:
+      database: ${INVENTORY_DB:e_commerce_db}
+      port: ${MONGO_PORT:27017}
+      host: ${MONGO_HOST:localhost}
+      auto-index-creation: true
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+  instance:
+    preferIpAddress: true    
+  
