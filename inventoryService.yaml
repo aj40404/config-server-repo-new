@@ -1,5 +1,5 @@
 server:
-  port: ${INVENTORY_PORT:9019}
+  port: ${INVENTORY_PORT:9008}
 spring:
   servlet:
     multipart:

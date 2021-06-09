@@ -1,5 +1,5 @@
 server:
-  port: ${CART_SERVICE_PORT:9011}
+  port: ${CART_SERVICE_PORT:9012}
 spring:
   data:
     mongodb:
