@@ -8,12 +8,21 @@ server:
   port: ${GATEWAY_PORT:8090}
 zuul:
   routes:
-    book-service:
-      path: /book-service/**
-      serviceId: BookService
+    user-service:
+      path: /user-service/**
+      serviceId: UserService
     user-authentication-service:
       path: /user-authentication-service/**
       serviceId: UserAuthenticationService
+    inventory-service:
+      path: /inventory-service/**
+      serviceId: InventoryService
+    cart-service:
+      path: /cart-service/**
+      serviceId: CartService
+    order-service:
+      path: /order-service/**
+      serviceId: OrderService      
                  
 
 
